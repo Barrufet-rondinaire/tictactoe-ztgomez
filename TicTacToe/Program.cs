@@ -1,9 +1,15 @@
 ﻿namespace TicTacToe;
-
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main()
     {
-        Console.WriteLine("Hello, World!");
+        using (var client = new HttpClient())
+        {
+            var r = await client.GetAsync(
+                "http://localhost:8080/"
+            );
+            
+        }
+
     }
 }
